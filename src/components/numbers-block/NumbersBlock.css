@@ -1,0 +1,12 @@
+.numbers-block {
+  max-width: 240px;
+  border-radius: 4px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.numbers-block__column.col-4, .numbers-block__column.col-8 {
+  padding: 4px;
+}
