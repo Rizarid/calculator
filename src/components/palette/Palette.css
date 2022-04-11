@@ -1,0 +1,14 @@
+.palette {
+  max-width: 240px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  
+}
+
+.palette_isRuntime {
+  display: none;
+}
