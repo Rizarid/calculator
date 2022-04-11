@@ -1,0 +1,31 @@
+.result-button {
+  max-width: 240px;
+  border-radius: 4px;
+  width: 100%;
+  height: fit-content;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  cursor: grab;
+}
+
+.result-button_added {
+  box-shadow: none;
+}
+
+.result-button_inactive {
+  opacity: 50%;
+  cursor: default;
+}
+
+.result-button_isRuntime {
+  cursor: default;
+}
+
+.result-button.row {
+  --bs-gutter-x: 0;
+}
+
+.result-button__column.col-12 {
+  padding: 4px;
+}
