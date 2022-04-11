@@ -18,7 +18,7 @@ const initialState: CalculatorState = {
   isShowedResult: false,
 };
 
-const MAXIMUM_CHARACTERS = 18;
+const MAXIMUM_CHARACTERS = 13;
 
 export const calculatorSlice = createSlice({
   name: 'calculator',
