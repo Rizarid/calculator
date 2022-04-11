@@ -1,0 +1,32 @@
+.operations-block {
+  max-width: 240px;
+  border-radius: 4px;
+  width: 100%;
+  height: fit-content;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  cursor: grab;
+}
+
+.operations-block_isRuntime {
+  cursor: default;
+}
+
+.operations-block.row {
+  --bs-gutter-x: 0;
+}
+
+.operations-block_added {
+  box-shadow: none;
+}
+
+.operations-block_inactive {
+  opacity: 50%;
+  cursor: default;
+}
+
+.operations-block__column.col-3 {
+  padding: 4px;
+  pointer-events: none
+}
