@@ -14,9 +14,22 @@
   font-size: 14px;
   line-height: 15px;
   text-align: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.button_isRuntime {
+  pointer-events: all;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button_isRuntime:hover {
+  border: 2px solid #5D5FEF;
 }
 
 .button_result {
   height: 64px;
   background: #5D5FEF;
+  color: #FFF;
 }
