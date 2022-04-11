@@ -4,10 +4,11 @@
 ## Запуск проекта
 Склонируйте репазиторий:
 ```
-git clone
+git clone git@github.com:Rizarid/calculator.git
 ```
 Установите зависимости:
 ```
+cd calculator
 npm i
 ```
 Для запуска на локальном сервере выполните команду:
