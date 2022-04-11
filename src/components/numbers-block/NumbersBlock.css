@@ -2,11 +2,31 @@
   max-width: 240px;
   border-radius: 4px;
   width: 100%;
+  height: fit-content;
   background: #FFFFFF;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  cursor: grab;
+}
+
+.numbers-block_isRuntime {
+  cursor: default;
+}
+
+.numbers-block.row {
+  --bs-gutter-x: 0;
+}
+
+.numbers-block_added {
+  box-shadow: none;
+}
+
+.numbers-block_inactive {
+  opacity: 50%;
+  cursor: default;
 }
 
 .numbers-block__column.col-4, .numbers-block__column.col-8 {
   padding: 4px;
+  pointer-events: none;
 }
