@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+# Конструктор калькулятора
+Тестовое задание компании Sendsay. Посмотреть рабочую версию можно на DEMO странице.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Запуск проекта
+Склонируйте репазиторий:
+```
+git clone
+```
+Установите зависимости:
+```
+npm i
+```
+Для запуска на локальном сервере выполните команду:
+```
+npm start
+```
+Для сборки проекта запустите команду:
+```
+npm run build
+```
 
-## Available Scripts
+## Задание
+> **Задача**: вам нужно сделать drag-and-drop конструктор, с помощью которого можно собрать калькулятор
+> 
 
-In the project directory, you can run:
+### Что нужно сделать?
 
-### `npm start`
+Нужно написать SPA приложение на React'e и выложить его на github.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### [Интерфейс, который должен получиться](https://www.figma.com/file/pdYzuOkvXY3Q00YRAMsLuz/Calculator-Constructor?node-id=613%3A1089)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### **Основная часть экрана - холст**
 
-### `npm test`
+На холст можно бросать компоненты из палитры. Все элементы, брошенные на холст, располагаются вертикально.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+При перетаскивании должна подсветиться зона, куда вставится элемент
 
-### `npm run build`
+Элемент удаляется с холста по dblclick
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Сайдбар с набором компонентов**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Их всего 4:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- дисплей (на холсте он может находиться только в самом верху),
+- цифровой блок с кнопками от `0` до `9` и `,` (дробь)
+- кнопки операций: `x`, `/`, `+`, `-`
+- и отдельно кнопка `=`
 
-### `npm run eject`
+Все компоненты одинаковой ширины.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Каждый элемент можно бросить на холст только один раз, Затем они становятся неактивными (визуально - opacity 50%).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **Переключатель между режимом конструктора и runtime**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Это может быть обычный свитчер в углу экрана.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- в режиме конструктора можно собирать интерфейс, но при нажатии на кнопки, они ничего не делают.
+- в режиме runtime перетаскивать ничего нельзя (можно полностью скрывать сайдбар), но работает калькулятор (или то что собрали).Нажимаем на кнопки и видим результат на дисплее.
 
-## Learn More
+### **Стэк**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- TypeScript, React
+- redux / redux-thunk / redux toolkit / redux-saga - на ваше усмотрение
+- css framework - на ваше усмотрение
+- eslint
