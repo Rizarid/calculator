@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Palette } from './components/palette/Palette';
+import { Canvas } from './components/canvas/Canvas';
+import { RuntimeSwitcher } from './components/runtime-switcher/RuntimeSwitcher';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app container">
+      <div className="app__content">
+        <div className="app__switcher">
+          <RuntimeSwitcher />
+        </div>
+        <Palette />
+        <Canvas />
+      </div>
     </div>
   );
 }
