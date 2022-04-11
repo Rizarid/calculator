@@ -1,0 +1,21 @@
+.insertion-place {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  align-items: center;
+}
+
+.insertion-place__rhomb {
+  width: 4.24px;
+  height: 4.24px;
+  background-color: #5D5FEF;
+  display: inline-block;
+  transform: rotate(45deg)
+}
+
+.insertion-place__line {
+  flex: 1 1 auto;
+  height: 2px;
+  background-color: #5D5FEF;
+}
