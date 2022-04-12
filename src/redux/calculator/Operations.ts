@@ -1,3 +1,5 @@
+import Big from 'big.js';
+
 const plus = (result: number, displayValue: string): number => (
   result + Number.parseFloat(displayValue)
 );
@@ -22,12 +24,27 @@ export const OPERATIONS = new Map([
   ['/', div],
 ]);
 
+const roundInteger = (value: number, maximumCharacters: number) => {
+  const bigValue = BigInt(value);
+  const stringValue = bigValue.toString();
+
+  const charExcess = stringValue.length - maximumCharacters;
+  const lengthOfSubstr = maximumCharacters - 2 - charExcess.toString().length;
+  return `${stringValue.slice(0, lengthOfSubstr)}e+${charExcess + 2 + charExcess.toString().length}`;
+};
+
 export const round = (value: number, maximumCharacters: number): string => {
-  const stringValue = value.toString();
+  const bigValue = Big(value);
+  const stringValue = bigValue.toFixed();
+
   if (stringValue.length <= maximumCharacters) return stringValue;
 
-  const excess = stringValue.length - maximumCharacters;
-  const numberOfChar = maximumCharacters - 4 - excess.toString().length;
+  const dotIndex = stringValue.indexOf('.');
 
-  return value.toExponential(numberOfChar);
+  if ((dotIndex !== -1) && (dotIndex <= maximumCharacters)) {
+    const numberOfCharAfterDot = maximumCharacters - dotIndex - 1;
+    return value.toFixed(numberOfCharAfterDot);
+  }
+
+  return roundInteger(value, maximumCharacters);
 };
